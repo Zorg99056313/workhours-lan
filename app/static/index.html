@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>研发工时统计系统</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+
+<!-- ================= 登录 ================= -->
+<div id="login">
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <h1>研发工时统计系统</h1>
+    <div class="sub">每周半天填报 · 月度工时统计</div>
+    <div class="field">
+      <label for="lgUser">登录账号</label>
+      <input id="lgUser" name="username" type="text" placeholder="请输入账号" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="lgPwd">密码</label>
+      <input id="lgPwd" name="password" type="password" placeholder="请输入密码" autocomplete="current-password" required>
+    </div>
+    <button class="btn primary block" id="lgBtn" type="submit">登 录</button>
+    <div class="login-err" id="lgErr"></div>
+    <div class="login-tip">
+      初始管理员账号 <b>admin</b>，密码见启动窗口提示。<br>
+      首次登录后请立即修改密码。
+    </div>
+  </form>
+</div>
+
+<!-- ================= 主体 ================= -->
+<div id="app" class="hidden">
+  <div class="topbar">
+    <div class="brand"><span class="dot">工</span>研发工时统计</div>
+    <div class="topbar-right">
+      <span id="hdrUser">—</span>
+      <div class="avatar" id="hdrAvatar">—</div>
+      <button class="btn ghost sm" id="btnLogout">退出</button>
+    </div>
+  </div>
+
+  <nav class="tabs" id="tabs"></nav>
+  <main class="wrap" id="view"></main>
+</div>
+
+<div id="modalHost"></div>
+<div id="toast"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
